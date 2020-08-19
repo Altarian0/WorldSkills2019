@@ -1,0 +1,56 @@
+﻿<Page x:Class="WorldSkills2019.Pages.EMRequestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WorldSkills2019.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EMRequestPage">
+
+    <Grid Background="#005CB9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <GroupBox Foreground="White" Header="Selected Asset" FontSize="14" BorderBrush="Gray" BorderThickness="2" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="641" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Myriad Pro">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="20,0,0,0">
+                    <TextBlock Text="Asset SN:" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                    <TextBlock Text="{Binding Assets.AssetSN}" Width="100" FontWeight="Bold" Margin="10,0,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
+                    <TextBlock Text="Asset Name:" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                    <TextBlock Text="{Binding Assets.AssetName}" Width="130" FontWeight="Bold" Margin="10,0,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
+                    <TextBlock Text="Department:" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                    <TextBlock Text="{Binding Assets.DepartmentLocations.Departments.Name}" Width="100" FontWeight="Bold" Margin="10,0,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Foreground="White" Grid.Row="1" Header="Request Report" FontSize="14" BorderBrush="Gray" BorderThickness="2" HorizontalAlignment="Left" Height="260" Margin="10,10,0,0" VerticalAlignment="Top" Width="780" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Myriad Pro">
+            <StackPanel Orientation="Vertical">
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="20,20,0,0">
+                    <TextBlock Text="Priority:" VerticalAlignment="Center" TextAlignment="Center" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                    <ComboBox x:Name="PriorityCombo" SelectedItem="{Binding Priorities}" DisplayMemberPath="Name"  Width="220" Height="25" FontWeight="Bold" Margin="50,0,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical" Margin="20,20,0,0">
+                    <TextBlock Text="Description of Emegency:" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Center" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                    <TextBox x:Name="DescriptionBox" Text="{Binding DescriptionEmergency}" Width="620" Height="60" FontWeight="Bold" Margin="100,10,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical" Margin="20,10,0,0">
+                    <TextBlock Text="Other Considerations:" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Center" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                    <TextBox x:Name="OtherConsiderations" Text="{Binding OtherConsiderations}" Width="620" Height="45" FontWeight="Bold" Margin="100,10,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="SendRequestButton" Width="150" Height="30" Content="Send Request" Click="SendRequestButton_Click"/>
+            <Button x:Name="CancelButton" Margin="20,0,0,0" Width="100" Height="30" Content="Cancel" Click="CancelButton_Click"/>
+        </StackPanel>
+        <Image HorizontalAlignment="Left" Height="85" Margin="709,25,0,0" VerticalAlignment="Top" Width="81" Source="/WorldSkills2019;component/Resource/2x/KN En White@2x.png"/>
+    </Grid>
+</Page>

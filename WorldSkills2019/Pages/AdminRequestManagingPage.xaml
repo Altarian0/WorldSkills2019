@@ -1,0 +1,26 @@
+﻿<Page x:Class="WorldSkills2019.Pages.AdminRequestManagingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WorldSkills2019.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminRequestManagingPage">
+
+    <Grid Background="White">
+        <TextBlock Text="List of Assets Requestingn EM:" FontSize="24" Margin="10,20,396,397" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Myriad Pro"/>
+        <DataGrid x:Name="EmRequestList"   Foreground="Black" AutoGenerateColumns="False" FontSize="14" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica" Margin="10,100,10,70">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Assets SN" Binding="{Binding Assets.AssetSN}"/>
+                <DataGridTextColumn Width="*" Header="Asset Name" Binding="{Binding Assets.AssetName}"/>
+                <DataGridTextColumn Width="*" Header="Request Date" Binding="{Binding EMReportDate}"/>
+                <DataGridTextColumn Width="*" Header="Emolyee Full Name" Binding="{Binding Assets.Employees.FullName}"/>
+                <DataGridTextColumn Width="*" Header="Department" Binding="{Binding Assets.DepartmentLocations.Departments.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ManageRequestButton" Background="#C8116B" Foreground="White" Content="Manage Request" HorizontalAlignment="Left" Margin="10,397,0,0" VerticalAlignment="Top" Width="220" Height="33" FontSize="14" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica" Click="ManageRequestButton_Click" />
+        <Image HorizontalAlignment="Left" Height="85" Margin="709,10,0,0" VerticalAlignment="Top" Width="81" Source="/WorldSkills2019;component/Resource/2x/KN En Colors@2x.png"/>
+
+    </Grid>
+</Page>

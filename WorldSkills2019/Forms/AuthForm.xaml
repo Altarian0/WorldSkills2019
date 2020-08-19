@@ -1,0 +1,33 @@
+﻿<Window x:Class="WorldSkills2019.Forms.AuthForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorldSkills2019.Forms"
+        mc:Ignorable="d"
+        Title="Authorithation" Height="250" Width="400" MaxHeight="400" MaxWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="68*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="26*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Sign in to managment"  BorderBrush="Gray" BorderThickness="2" Margin="25,22,25,1" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Myriad Pro" Grid.RowSpan="3" Grid.ColumnSpan="5"/>
+
+        <TextBlock Text="Username:" Width="70" Height="20" Margin="19,27,2,5" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="Password:" Width="70" Height="20" Margin="19,16,2,33" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica" Grid.Column="1" Grid.Row="2"/>
+        <TextBox x:Name="LoginBox" Width="200" Height="20" Margin="13,24,35,8" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Text="josefa"/>
+        <TextBox x:Name="PasswordBox" Width="200" Height="20" Margin="13,12,35,37" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Text="1324"/>
+
+        <Button x:Name="CancelButton" Content="Cancel" Margin="7,13,25,35" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Button x:Name="OkButton" Content="Ok" Margin="82,13,10,35" Grid.Row="3" Grid.Column="2" Click="OkButton_Click"/>
+    </Grid>
+</Window>
