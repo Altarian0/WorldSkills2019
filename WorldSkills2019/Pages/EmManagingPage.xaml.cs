@@ -22,11 +22,12 @@ namespace WorldSkills2019.Pages
     /// </summary>
     public partial class EmManagingPage : Page
     {
+        private readonly Employees employees;
+
         public EmManagingPage(Employees employees)
         {
             InitializeComponent();
-
-            AssetsList.ItemsSource = DBHelper.GetContext().Assets.Where(n=>n.EmployeeID == employees.ID).ToList();
+            this.employees = employees;
         }
 
         /// <summary>
@@ -43,6 +44,12 @@ namespace WorldSkills2019.Pages
             }
 
             NavigationService.Navigate(new EMRequestPage((Assets)AssetsList.SelectedItem));
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            AssetsList.ItemsSource = DBHelper.GetContext().Assets.Where(n => n.EmployeeID == employees.ID).ToList();
+
         }
     }
 }

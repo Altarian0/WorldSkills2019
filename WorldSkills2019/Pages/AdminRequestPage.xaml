@@ -41,7 +41,7 @@
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="160,0,0,0">
                         <TextBlock Text="Completed On:" VerticalAlignment="Center" TextAlignment="Center" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
-                        <DatePicker x:Name="CompletedOnDatePicker"   Width="150" Height="30" FontWeight="Bold" Margin="50,0,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
+                        <DatePicker x:Name="CompletedOnDatePicker"  SelectedDate="{Binding EMEndDate}" Width="150" Height="30" FontWeight="Bold" Margin="50,0,0,0" FontFamily="/WorldSkills2019;component/Resource/Fonts/#Helvetica"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical" Margin="20,10,0,0">
@@ -87,8 +87,8 @@
         </GroupBox>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="265,154,265,0" Grid.Row="2" Width="270">
-            <Button x:Name="SendRequestButton" Width="150" Height="30" Content="Send Request" />
-            <Button x:Name="CancelButton" Margin="20,0,0,0" Width="100" Height="30" Content="Cancel" />
+            <Button x:Name="SubmitButton" Width="150" Height="30" Content="Submit" Click="SubmitButton_Click" />
+            <Button x:Name="CancelButton" Margin="20,0,0,0" Width="100" Height="30" Content="Cancel" Click="CancelButton_Click" />
         </StackPanel>
         <Image HorizontalAlignment="Left" Height="85" Margin="698,18,0,0" VerticalAlignment="Top" Width="81" Source="/WorldSkills2019;component/Resource/2x/KN En White@2x.png" Grid.RowSpan="2"/>
     </Grid>

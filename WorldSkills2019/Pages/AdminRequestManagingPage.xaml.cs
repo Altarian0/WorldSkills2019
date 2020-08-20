@@ -25,7 +25,7 @@ namespace WorldSkills2019.Pages
         public AdminRequestManagingPage(Employees employees)
         {
             InitializeComponent();
-            EmRequestList.ItemsSource = DBHelper.GetContext().EmergencyMaintenances.ToList();
+            EmRequestList.ItemsSource = DBHelper.GetContext().EmergencyMaintenances.OrderByDescending(n=>n.PriorityID).ToList();
 
         }
 

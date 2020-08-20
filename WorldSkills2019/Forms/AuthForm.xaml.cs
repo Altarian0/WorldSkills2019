@@ -36,18 +36,11 @@ namespace WorldSkills2019.Forms
         /// <param name="e"></param>
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Employees employees = DBHelper.GetContext().Employees.Where(n=>n.Username == LoginBox.Text && n.Password == PasswordBox.Text).Single();
+            Employees employees = DBHelper.GetContext().Employees.Where(n => n.Username == LoginBox.Text && n.Password == PasswordBox.Text).Single();
 
-                MainWindow mainWindow = new MainWindow(employees);
-                mainWindow.Show();
-                this.Close();
-            }
-            catch
-            {
-                MessageBox.Show("Invalid Login or Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            MainWindow mainWindow = new MainWindow(employees);
+            mainWindow.Show();
+            this.Close();
         }
     }
 }
